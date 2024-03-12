@@ -1,0 +1,20 @@
+package threads;
+
+public class orn3uykutesti extends Thread {
+
+    public void run() {
+        try {
+            while (true) {
+                System.out.println("uyuyor...");
+                Thread.sleep(60 * 10);
+            }
+        } catch (InterruptedException iEx) {
+            //bosver
+        }
+    }
+
+    public static void main(String[] args) {
+        orn3uykutesti ut = new orn3uykutesti();
+        ut.start();
+    }
+}
