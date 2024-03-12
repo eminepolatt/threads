@@ -1,0 +1,19 @@
+
+package threads;
+class Isci extends Thread{
+    public void run(){// run() metoduyla yazılan kodlar kesinlikle threadla çalışır
+        for (int i = 0; i < 5; i++) {
+              System.out.println(this.getName()+"-->");
+        }
+          
+        }
+    }
+
+public class ornek1 {
+    public static void main(String[] args) {
+        Isci i1=new Isci();
+        Isci i2=new Isci();
+        i1.start();// start metodu thread sınıfının içinde olan bir metoddur ve run metodunu çalıştırır
+        i2.start();
+    }
+}
