@@ -1,0 +1,38 @@
+
+package threads;
+
+class printChar implements Runnable{
+    char kar;
+    int sayi;
+    public printChar(char kar, int sayi){
+        this.kar=kar;
+        this.sayi=sayi;
+    }
+    @Override
+    public void run(){
+        for (int i = 0; i < sayi; i++) {
+            System.out.println(kar+" ");
+        }
+}
+}
+class printNum implements Runnable{
+    int sonsayi;
+    public printNum(int sonsayi){
+    this.sonsayi=sonsayi;
+}
+@Override
+public void run(){
+    for (int i = 0; i < sonsayi; i++) {
+        System.out.println(i+"");
+    }
+}}
+    public class uyg2 {
+    public static void main(String[] args) {
+        Thread t1=new Thread(new printChar('a',50));
+        Thread t2=new Thread(new printChar('b',50));
+        Thread t3=new Thread(new printNum(50));
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
