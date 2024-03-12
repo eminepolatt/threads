@@ -1,0 +1,35 @@
+
+package threads;
+
+class Mudur{
+    public void calis(){
+        System.out.println("Mrb ben Mudur");
+    }
+}
+class GenelMudur extends Mudur implements Runnable{
+    public void calis(){
+        System.out.println("MrbBen Genelmudur");
+    }
+    public void run(){
+        try{
+            for (int i = 0; i < 5; i++) {
+                Thread.currentThread().sleep(150);
+                System.out.println(Thread.currentThread().getName()+"<->"+i);
+                        
+            }
+        }
+        catch (InterruptedException  iEx){
+            //bosver
+        }
+    }
+}
+public class ArayuzTest1 {
+    public static void main(String[] args) {
+        GenelMudur gm1=new GenelMudur();
+        GenelMudur gm2=new GenelMudur();
+        Thread th1=new Thread(gm1);
+        Thread th2=new Thread(gm2);
+        th1.start();
+        th2.start();
+    }
+}
